@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Cliente } from 'src/app/classes/cliente';
+import { ClientesService } from 'src/app/services/clientes.service';
 
 @Component({
   selector: 'app-cliente-novo',
@@ -8,14 +10,24 @@ import { Router } from '@angular/router';
 })
 export class ClienteNovoComponent {
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private service: ClientesService) {}
 
-  //incluir() {
+  cliente: Cliente = new Cliente();  
 
-  //}
-
-  fechar() {
-    this.router.navigate(['clientes']) ;
-  }
-
+    fechar() {
+      this.router.navigate(['/clientes']) ;
+    }
+  
+    incluir(cliente: Cliente) : void {
+      this.service.postClienteApi(cliente)
+        .subscribe({
+          complete: () => this.fechar(),
+          error: erro => {
+            console.error(erro);
+            window.alert(erro);
+           }
+      })
+    }
 }
