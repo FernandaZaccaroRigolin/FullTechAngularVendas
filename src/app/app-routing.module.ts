@@ -16,6 +16,9 @@ const routes: Routes = [
   { path: "clientes/novo", component: ClienteNovoComponent},
   { path: "clientes/alteracao/:id", component: ClienteAlteracaoComponent},
   { path: "clientes/remocao/:id", component: ClienteRemocaoComponent},
+  { path: "produtos", loadChildren: 
+    () => import('./modules/produtos/produtos.module').then(m => m.ProdutosModule)},
+
   { path: "**", component: NotFoundComponent}  
 ];
 

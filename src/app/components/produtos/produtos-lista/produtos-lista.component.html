@@ -1,0 +1,17 @@
+<table class="table table-striped">
+<!-- <table class="table table-hover">     -->
+    <thead>
+        <th>ID</th>
+        <th>DESCRICAO</th>
+        <th>UNIDADE</th>
+        <th>PRECO</th>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let p of produtos">
+            <td>{{p.id}}</td>
+            <td>{{p.descricao}}</td>
+            <td>{{p.unidade}}</td>
+            <td>{{p.preco}}</td>
+        </tr>
+    </tbody>
+</table>

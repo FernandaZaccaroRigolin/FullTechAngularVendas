@@ -14,6 +14,7 @@ import { ClienteNovoComponent } from './components/clientes/cliente-novo/cliente
 import { ClientesListaComponent } from './components/clientes/clientes-lista/clientes-lista.component';
 import { ClienteAlteracaoComponent } from './components/clientes/cliente-alteracao/cliente-alteracao.component';
 import { ClienteRemocaoComponent } from './components/clientes/cliente-remocao/cliente-remocao.component';
+import { ProdutosModule } from './modules/produtos/produtos.module';
 
 
 @NgModule({
