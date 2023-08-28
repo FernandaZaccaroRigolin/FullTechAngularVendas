@@ -1,13 +1,14 @@
 export class Cliente {
+
     constructor() {
         this.cpf = '';
         this.nome = '';
-        this.telefone = '';
         this.email = '';
+        this.telefone = '';
     }
 
     cpf: string;
-    nome: string; 
-    telefone: string;
+    nome: string;
     email: string;
+    telefone: string;
 }

@@ -8,8 +8,9 @@ import { ProdutosService } from 'src/app/services/produtos.service';
   styleUrls: ['./produtos-lista.component.css']
 })
 export class ProdutosListaComponent implements OnInit {
-
+  
   constructor(private service: ProdutosService) {}
+
   ngOnInit(): void {
     this.listar();
   }
@@ -19,5 +20,4 @@ export class ProdutosListaComponent implements OnInit {
   listar() : void {
     this.service.getProdutosApi().subscribe(resposta => this.produtos = resposta);
   }
-  
 }

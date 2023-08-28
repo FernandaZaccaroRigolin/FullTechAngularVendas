@@ -1,26 +1,28 @@
 <div class="margem">
     <h2 class="text-primary text-center">Alteração de Cliente</h2>
     <form>
+
         <div class="mb-3">
             <label class="form-label">Cpf:</label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf" readonly/>
+            <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf" readonly />
         </div>
         <div class="mb-3">
             <label class="form-label">Nome:</label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.nome"  name="nome"/>
+            <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome" />
         </div>
         <div class="mb-3">
             <label class="form-label">Email:</label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.email"  name="email" />
+            <input type="text" class="form-control" [(ngModel)]="cliente.email" name="email" />
         </div>
         <div class="mb-3">
             <label class="form-label">Telefone:</label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.telefone" name="telefone"/>
+            <input type="text" class="form-control" [(ngModel)]="cliente.telefone" name="telefone" />
         </div>
-        
+
         <div>
             <button class="btn btn-primary borda-botao" (click)="alterar(cliente)">Alterar Cliente</button>
             <button class="btn btn-secondary" (click)="fechar()">Voltar</button>
         </div>
     </form>
 </div>
+

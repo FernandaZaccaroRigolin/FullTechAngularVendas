@@ -1,17 +1,23 @@
-<table class="table table-striped">
-<!-- <table class="table table-hover">     -->
+<div class="mb-3">
+    <label class="form-label">Informe partes da descrição:</label>
+    <input type="text" class="form-control" #busca (keyup)="0" />
+</div>
+
+<table class="table table-hover">
     <thead>
-        <th>ID</th>
-        <th>DESCRICAO</th>
-        <th>UNIDADE</th>
-        <th>PRECO</th>
+        <tr>
+            <th>ID</th>
+            <th>DESCRIÇÃO</th>
+            <th>UNIDADE</th>
+            <th>PREÇO</th>
+        </tr>
     </thead>
     <tbody>
-        <tr *ngFor= "let p of produtos">
+        <tr *ngFor="let p of produtos | filtrarprodutos:busca.value">
             <td>{{p.id}}</td>
-            <td>{{p.descricao}}</td>
+            <td>{{p.descricao | descsize}}</td>
             <td>{{p.unidade}}</td>
-            <td>{{p.preco}}</td>
+            <td>{{p.preco | currency: 'BRL'}}</td>
         </tr>
     </tbody>
 </table>

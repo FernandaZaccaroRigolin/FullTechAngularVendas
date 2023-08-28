@@ -7,22 +7,19 @@ import { ClientesService } from 'src/app/services/clientes.service';
   templateUrl: './clientes-lista.component.html',
   styleUrls: ['./clientes-lista.component.css']
 })
-export class ClientesListaComponent implements OnInit{
+export class ClientesListaComponent implements OnInit {
   
-  constructor(private clienteService: ClientesService){}
+  constructor(private service: ClientesService) { }
 
-  clientes: Cliente[] = [];
+  clientes : Cliente[] = [];
 
-  listarClientes() : void{
-    this.clienteService.getClientesApi().subscribe(
-      resposta => this.clientes = resposta);  
+  dataAtual : Date = new Date(); // data atual para exibição da lista
+
+  listarClientes() : void {
+    this.service.getClientesApi().subscribe(resposta => this.clientes = resposta);
   }
-
   ngOnInit(): void {
     this.listarClientes();
   }
+
 }
-
-
-
- 

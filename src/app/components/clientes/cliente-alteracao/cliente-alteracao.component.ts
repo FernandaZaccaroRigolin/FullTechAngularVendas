@@ -9,32 +9,33 @@ import { ClientesService } from 'src/app/services/clientes.service';
   styleUrls: ['./cliente-alteracao.component.css']
 })
 export class ClienteAlteracaoComponent implements OnInit {
+  
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
+    private router: Router, 
+    private route: ActivatedRoute, 
     private service: ClientesService) { }
 
-  cliente: Cliente = new Cliente;
-  cpf!: string;
+    cliente: Cliente = new Cliente();
+    cpf!: string;
 
   ngOnInit(): void {
-    //this cpf = this.route.snapshot.paramMap.get('id') as string;
+    //const cpf = this.route.snapshot.paramMap.get('id') as string;
     //this.buscar(cpf);
-  
+
     this.cpf = this.route.snapshot.paramMap.get('id') as string;
     this.buscar(this.cpf);
   }
 
-  buscar(cpf: string): void {
+  buscar(cpf: string) : void {
     this.service.getClienteApi(cpf)
       .subscribe(resposta => this.cliente = resposta);
   }
 
-  fechar() {
+  fechar() : void {
     this.router.navigate(['/clientes']);
   }
 
-  alterar(cliente: Cliente) {
+  alterar(cliente: Cliente) : void {
     this.service.putClienteApi(cliente, this.cpf)
       .subscribe({
         complete: () => this.fechar(),
@@ -44,4 +45,6 @@ export class ClienteAlteracaoComponent implements OnInit {
         }
       });
   }
+
+
 }

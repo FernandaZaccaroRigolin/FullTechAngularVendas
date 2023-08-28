@@ -9,17 +9,16 @@ import { ClienteAlteracaoComponent } from './components/clientes/cliente-alterac
 import { ClienteRemocaoComponent } from './components/clientes/cliente-remocao/cliente-remocao.component';
 
 const routes: Routes = [
-  // { path: "", redirectTo: "home", pathMatch: 'full'},
-  { path: "", component: HomeComponent},
+  { path: "", component: HomeComponent },
   { path: "apresentacao", component: ApresentacaoComponent},
-  { path: "clientes", component: ClientesComponent},
+  { path: "clientes", component: ClientesComponent },
   { path: "clientes/novo", component: ClienteNovoComponent},
-  { path: "clientes/alteracao/:id", component: ClienteAlteracaoComponent},
+  { path: "clientes/alteracao/:id", component: ClienteAlteracaoComponent },
   { path: "clientes/remocao/:id", component: ClienteRemocaoComponent},
-  { path: "produtos", loadChildren: 
-    () => import('./modules/produtos/produtos.module').then(m => m.ProdutosModule)},
 
-  { path: "**", component: NotFoundComponent}  
+  { path: "produtos", loadChildren: () => import('./modules/produtos/produtos.module').then(m => m.ProdutosModule)},
+  { path: "pedidos", loadChildren: () => import('./modules/pedidos/pedidos.module').then(m => m.PedidosModule)},
+  { path: "**", component: NotFoundComponent}
 ];
 
 @NgModule({

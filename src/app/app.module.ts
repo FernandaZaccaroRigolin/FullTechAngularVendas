@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
@@ -14,8 +14,7 @@ import { ClienteNovoComponent } from './components/clientes/cliente-novo/cliente
 import { ClientesListaComponent } from './components/clientes/clientes-lista/clientes-lista.component';
 import { ClienteAlteracaoComponent } from './components/clientes/cliente-alteracao/cliente-alteracao.component';
 import { ClienteRemocaoComponent } from './components/clientes/cliente-remocao/cliente-remocao.component';
-import { ProdutosModule } from './modules/produtos/produtos.module';
-
+import { SubListaPipe } from './pipes/sub-lista.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,8 @@ import { ProdutosModule } from './modules/produtos/produtos.module';
     ClienteNovoComponent,
     ClientesListaComponent,
     ClienteAlteracaoComponent,
-    ClienteRemocaoComponent
+    ClienteRemocaoComponent,
+    SubListaPipe
   ],
   imports: [
     BrowserModule,

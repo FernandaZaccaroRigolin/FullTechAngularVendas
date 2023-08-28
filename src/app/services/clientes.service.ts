@@ -19,7 +19,7 @@ export class ClientesService {
 
   // busca por um cliente pelo id (cpf)
   public getClienteApi(cpf: string) : Observable<Cliente> {
-    const url = `${this.baseUrl}${cpf}`; 
+    const url = `${this.baseUrl}${cpf}`;
     return this.http.get<Cliente>(url);
   }
 
@@ -28,19 +28,16 @@ export class ClientesService {
     return this.http.post<Cliente>(this.baseUrl, cliente);
   }
 
-  // alteracao de cliente
-  public putClienteApi(cliente: Cliente, cpf: string): Observable<Cliente>{
+  // alteração de um cliente
+  public putClienteApi(cliente: Cliente, cpf: string): Observable<Cliente> {
     const url = `${this.baseUrl}${cpf}`;
     return this.http.put<Cliente>(url, cliente);
-  }  
-
-  //remoção do cliente
-  public deleteClienteApi(cpf: string): Observable<string> {
-    const url = `${this.baseUrl}${cpf}`;
-    return this.http.delete<string>(url);
   }
-  
 
-
+  // remoção de cliente com base no cpf
+  public deleteCliente(cpf: string) : Observable<any> {
+    const url = `${this.baseUrl}${cpf}`;
+    return this.http.delete<any>(url);
+  }
 
 }

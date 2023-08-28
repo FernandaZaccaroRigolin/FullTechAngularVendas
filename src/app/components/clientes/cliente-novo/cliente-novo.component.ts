@@ -11,23 +11,24 @@ import { ClientesService } from 'src/app/services/clientes.service';
 export class ClienteNovoComponent {
 
   constructor(
-    private router: Router,
+    private router: Router, 
     private service: ClientesService) {}
 
-  cliente: Cliente = new Cliente();  
+  cliente: Cliente = new Cliente();
 
-    fechar() {
-      this.router.navigate(['/clientes']) ;
-    }
-  
-    incluir(cliente: Cliente) : void {
-      this.service.postClienteApi(cliente)
-        .subscribe({
-          complete: () => this.fechar(),
-          error: erro => {
-            console.error(erro);
-            window.alert(erro);
-           }
-      })
-    }
+  fechar() : void{
+    this.router.navigate(['clientes']);
+  }
+
+  incluir(cliente: Cliente) : void {
+    this.service.postClienteApi(cliente)
+      .subscribe({
+        
+        complete: () => this.fechar(),
+        error: erro => {
+          console.error(erro);
+          window.alert(erro);
+        }
+      });
+  }
 }

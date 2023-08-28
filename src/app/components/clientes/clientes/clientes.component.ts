@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent {
-  constructor(private router: Router){ }
+  constructor(private router: Router) { }
 
   novoCliente() : void {
     this.router.navigate(['clientes/novo']);

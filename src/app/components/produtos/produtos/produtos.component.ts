@@ -7,10 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./produtos.component.css']
 })
 export class ProdutosComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
-  novoProduto() : void{
+  novoProduto() : void {
     this.router.navigate(['produtos/novo']);
   }
-
 }

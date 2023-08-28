@@ -5,9 +5,9 @@ import { ProdutosNovoComponent } from 'src/app/components/produtos/produtos-novo
 import { ProdutosComponent } from 'src/app/components/produtos/produtos/produtos.component';
 
 const routes: Routes = [
-  { path: "", component: ProdutosComponent},
-  { path: "novo", component: ProdutosNovoComponent},
-  { path: "lista", component: ProdutosListaComponent}
+  { path: "", component: ProdutosComponent },
+  { path: "novo", component: ProdutosNovoComponent },
+  { path: "lista", component: ProdutosListaComponent }
 ];
 
 @NgModule({
