@@ -1,1 +1,27 @@
-<p>pedido-novo works!</p>
+<div class="margem">
+    <h2 class="text-success text-center">Efetuar Novo Pedido</h2>
+    <form>
+        <div class="mb-3">
+            <label class="form-label">Selecione o cliente:</label>
+            <select class="form-select" [(ngModel)]="pedidoDTO.cpf" name="cpf">
+                <option value="">SELECIONE</option>
+                <option *ngFor="let c of clientes" [value]="c.cpf">{{c.nome}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Número do pedido:</label>
+            <input type="text" class="form-control" [(ngModel)]="pedidoDTO.pedido" name="pedido" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Data do pedido:</label>
+            <input type="date" class="form-control" [(ngModel)]="pedidoDTO.data" name="data" />
+        </div>
+        <div>
+            <button class="btn btn-success borda-botao" (click)="incluir(pedidoDTO)">Efetuar Pedido</button>
+            <button class="btn btn-secondary" (click)="fechar()">Fechar</button>
+        </div>
+        <div class="mt-3">
+            <div *ngIf="resposta" [class]="estilo">{{resposta}}</div>
+        </div>
+    </form>
+</div>
