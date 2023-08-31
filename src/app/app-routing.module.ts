@@ -18,6 +18,8 @@ const routes: Routes = [
 
   { path: "produtos", loadChildren: () => import('./modules/produtos/produtos.module').then(m => m.ProdutosModule)},
   { path: "pedidos", loadChildren: () => import('./modules/pedidos/pedidos.module').then(m => m.PedidosModule)},
+  { path: "itens", loadChildren: () => import('./modules/item/item.module').then(m => m.ItemModule)},
+  
   { path: "**", component: NotFoundComponent}
 ];
 

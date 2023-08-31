@@ -1,0 +1,29 @@
+<div class="margem">
+    <h2 class="text-primary text-center">Inclusão de itens em pedidos</h2>
+    <form>
+        <div class="mb-3">
+            <label class="form-label">Pedido</label>
+            <select class="form-select">
+                <option *ngFor="let ped of pedidos" [value]="ped.idPedido">
+                    {{ped.numeroPedido}} - {{ped.nome}}
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Produto</label>
+            <select class="form-select">
+                <option *ngFor="let prod of produtos" [value]="prod.id">{{prod.descricao}}</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Quantidade</label>
+            <input type="text" class="form-control" />
+        </div>
+
+        <div>
+            <button class="btn btn-primary">Adicionar item</button>
+        </div>
+    </form>
+</div>

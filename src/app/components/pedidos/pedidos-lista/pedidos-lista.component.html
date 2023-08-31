@@ -1,1 +1,31 @@
-<p>pedidos-lista works!</p>
+<h2 class="text-success">Lista de Pedidos</h2>
+<div *ngIf="cliente">
+    <div class="alert alert-success">
+        <span><strong>CPF:</strong> {{cliente.cpf}}</span><br/>
+        <span><strong>Cliente: </strong>{{cliente.nome}}</span>
+    </div>
+</div>
+<div>
+    <button class="btn btn-secondary" (click)="fechar()">Voltar</button>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>CPF</th>
+            <th>NOME</th>
+            <th>NUM.PEDIDO</th>
+            <th>DATA PEDIDO</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of pedidos">
+           <td>{{p.idPedido}}</td>
+           <td>{{p.cpf}}</td>
+           <td>{{p.nome}}</td>
+           <td>{{p.numeroPedido}}</td>
+           <td>{{p.data | date:'dd/MM/yyyy'}}</td>
+        </tr>
+    </tbody>
+</table>

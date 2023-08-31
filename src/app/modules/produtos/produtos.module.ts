@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { FiltrarProdutosPipe } from '../../pipes/filtrar-produtos.pipe';
 import { LOCALE_ID } from '@angular/core';
 import { DescSizePipe } from '../../pipes/desc-size.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
