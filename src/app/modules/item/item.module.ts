@@ -8,6 +8,7 @@ import { ItemListaComponent } from '../../components/itens/item-lista/item-lista
 import { ProdutosService } from 'src/app/services/produtos.service';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import { ItemService } from 'src/app/services/item.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ItemService } from 'src/app/services/item.service';
   ],
   imports: [
     CommonModule,
-    ItemRoutingModule
+    ItemRoutingModule,
+    FormsModule
   ],
   providers:[
     ProdutosService, 

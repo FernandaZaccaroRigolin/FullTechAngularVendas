@@ -5,11 +5,7 @@ import { PedidoClienteDTO } from 'src/app/classes/pedido-cliente-dto';
 import { PedidoDTO } from 'src/app/classes/pedido-dto';
 import { ClientesService } from 'src/app/services/clientes.service';
 import { PedidosService } from 'src/app/services/pedidos.service';
-<<<<<<< HEAD
 
-=======
-import * as moment from 'moment';
->>>>>>> 25f1269da61a771a885a025a50dc3fdd8b4323d7
 @Component({
   selector: 'app-pedido-novo',
   templateUrl: './pedido-novo.component.html',

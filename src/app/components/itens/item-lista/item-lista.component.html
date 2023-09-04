@@ -1,1 +1,38 @@
-<p>item-lista works!</p>
+<div class="fonte">
+    <h2 class="text-primary text-center">Lista de itens por pedido</h2>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Pedidos</label>
+    <select class="form-select" #lista (change)="selecionar(lista.value)">
+        <option value="0">SELECIONE</option>
+        <option *ngFor="let ped of pedidos" [value]="ped.idPedido">
+            {{ped.numeroPedido}} - {{ped.nome}}
+        </option>
+    </select>
+</div>
+
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID ITEM</th>
+                <th>N. PEDIDO</th>
+                <th>PRODUTO</th>
+                <th>VALOR</th>
+                <th>QUANTIDADE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of itens">
+                <td>{{item.id_item}}</td>
+                <td>{{item.pedido}}</td>
+                <td>{{item.produto}}</td>
+                <td>{{item.valorItem}}</td>
+                <td>{{item.quantidade}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

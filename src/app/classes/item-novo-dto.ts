@@ -1,5 +1,6 @@
 export class ItemNovoDTO {
-    idpedido!: number;
-    idproduto!: number;
-    quantidade!: number;
+
+    idpedido: number = 0;
+    idproduto: number = 0;
+    quantidade: number = 0;
 }

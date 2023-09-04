@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
 export class ClientesComponent {
   constructor(private router: Router) { }
 
+  // esta propriedade terá seu valor repassado para o componente filho (<app-clientes-lista>)
+  valorTitulo: string = "Listagem de Clientes";
+
+
   novoCliente() : void {
     this.router.navigate(['clientes/novo']);
   }
