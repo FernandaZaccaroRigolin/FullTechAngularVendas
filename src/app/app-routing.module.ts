@@ -7,12 +7,14 @@ import { ClientesComponent } from './components/clientes/clientes/clientes.compo
 import { ClienteNovoComponent } from './components/clientes/cliente-novo/cliente-novo.component';
 import { ClienteAlteracaoComponent } from './components/clientes/cliente-alteracao/cliente-alteracao.component';
 import { ClienteRemocaoComponent } from './components/clientes/cliente-remocao/cliente-remocao.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "apresentacao", component: ApresentacaoComponent},
   { path: "clientes", component: ClientesComponent },
-  { path: "clientes/novo", component: ClienteNovoComponent},
+  { path: "clientes/novo", component: ClienteNovoComponent, canActivate: [AuthGuard]},
   { path: "clientes/alteracao/:id", component: ClienteAlteracaoComponent },
   { path: "clientes/remocao/:id", component: ClienteRemocaoComponent},
 
@@ -20,6 +22,7 @@ const routes: Routes = [
   { path: "pedidos", loadChildren: () => import('./modules/pedidos/pedidos.module').then(m => m.PedidosModule)},
   { path: "itens", loadChildren: () => import('./modules/item/item.module').then(m => m.ItemModule)},
   
+  { path: "login", component: LoginComponent },
   { path: "**", component: NotFoundComponent}
 ];
 

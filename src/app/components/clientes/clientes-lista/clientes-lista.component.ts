@@ -9,7 +9,7 @@ import { ClientesService } from 'src/app/services/clientes.service';
 })
 export class ClientesListaComponent implements OnInit {
   
-  @Input() titulo: string = "Clientes";
+  @Input() titulo: string = "";
 
   constructor(private service: ClientesService) { }
 

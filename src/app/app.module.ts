@@ -15,6 +15,7 @@ import { ClientesListaComponent } from './components/clientes/clientes-lista/cli
 import { ClienteAlteracaoComponent } from './components/clientes/cliente-alteracao/cliente-alteracao.component';
 import { ClienteRemocaoComponent } from './components/clientes/cliente-remocao/cliente-remocao.component';
 import { SubListaPipe } from './pipes/sub-lista.pipe';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SubListaPipe } from './pipes/sub-lista.pipe';
     ClientesListaComponent,
     ClienteAlteracaoComponent,
     ClienteRemocaoComponent,
-    SubListaPipe
+    SubListaPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
