@@ -16,6 +16,12 @@ import { ClienteAlteracaoComponent } from './components/clientes/cliente-alterac
 import { ClienteRemocaoComponent } from './components/clientes/cliente-remocao/cliente-remocao.component';
 import { SubListaPipe } from './pipes/sub-lista.pipe';
 import { LoginComponent } from './components/login/login.component';
+import { JwtModule } from '@auth0/angular-jwt';
+
+export function tokenGetter() { 
+  return localStorage.getItem("jwt"); 
+}
+
 
 @NgModule({
   declarations: [
@@ -36,7 +42,15 @@ import { LoginComponent } from './components/login/login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    JwtModule.forRoot({
+      config:{
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:8080"],
+        disallowedRoutes: []
+      }
+    })    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

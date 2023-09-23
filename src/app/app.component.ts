@@ -25,12 +25,12 @@ export class AppComponent implements OnInit {
   mostrar(texto: string) : void {
     localStorage.clear();
     this.atribuirUsuario();
-    alert(texto);
+    //alert(texto);
   }
 
   // método a ser executado pelo evento 'activate' do elemento router-outlet
   onActivate(event: any) : void {
-    console.log(event);
+    //console.log(event);
     this.atribuirUsuario();
   }
 
